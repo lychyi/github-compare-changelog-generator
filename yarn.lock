@@ -375,6 +375,23 @@ mime-types@^2.1.12, mime-types@~2.1.19:
   dependencies:
     mime-db "1.40.0"
 
+minimist@0.0.8:
+  version "0.0.8"
+  resolved "https://artifactory.workday.com/artifactory/api/npm/npm-virtual/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
+  integrity sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
+
+minimist@^1.2.0:
+  version "1.2.0"
+  resolved "https://artifactory.workday.com/artifactory/api/npm/npm-virtual/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
+  integrity sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
+
+mkdirp@^0.5.1:
+  version "0.5.1"
+  resolved "https://artifactory.workday.com/artifactory/api/npm/npm-virtual/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
+  integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
+  dependencies:
+    minimist "0.0.8"
+
 nwsapi@^2.1.4:
   version "2.1.4"
   resolved "https://artifactory.workday.com/artifactory/api/npm/npm-virtual/nwsapi/-/nwsapi-2.1.4.tgz#e006a878db23636f8e8a67d33ca0e4edf61a842f"
@@ -396,6 +413,11 @@ optionator@^0.8.1:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
     wordwrap "~1.0.0"
+
+parse-github-url@^1.0.2:
+  version "1.0.2"
+  resolved "https://artifactory.workday.com/artifactory/api/npm/npm-virtual/parse-github-url/-/parse-github-url-1.0.2.tgz#242d3b65cbcdda14bb50439e3242acf6971db395"
+  integrity sha1-JC07ZcvN2hS7UEOeMkKs9pcds5U=
 
 parse5@5.1.0:
   version "5.1.0"

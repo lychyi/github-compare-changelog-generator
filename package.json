@@ -1,14 +1,33 @@
 {
-  "name": "gccg",
-  "version": "0.0.1",
-  "description": "Github Compare Changelog Generator",
-  "main": "index.js",
-  "author": "Lynn Chyi <14299381+lychyi@users.noreply.github.com>",
+  "name": "github-compare-changelog-generator",
+  "version": "0.1.0",
+  "description": "Generate markdown for changelogs from the Github Compare page.",
+  "keywords": ["github", "changelog", "generator", "compare", "markdown", "cli", "tool"],
+  "homepage": "https://github.com/lychyi/github-compare-changelog-generator",
+  "bugs": {
+    "url" : "https://github.com/owner/project/issues"
+  },
+  "main": "gccg.js",
+  "author": "Lynn Chyi (http://lynnchyi.com)",
   "license": "MIT",
+  "files": [
+    "src/**/*"
+  ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/lychyi/github-compare-changelog-generator.git"
+  },
   "dependencies": {
-    "jsdom": "^15.1.1"
+    "jsdom": "^15.1.1",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "parse-github-url": "^1.0.2"
   },
   "bin": {
-    "gccg": "./generate.js"
+    "gccg": "./src/cli.js"
+  },
+  "scripts": {
+    "ci": "echo TODO",
+    "test": "echo TODO"
   }
 }
