@@ -1,0 +1,14 @@
+{
+  "name": "gccg",
+  "version": "0.0.1",
+  "description": "Github Compare Changelog Generator",
+  "main": "index.js",
+  "author": "Lynn Chyi <14299381+lychyi@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jsdom": "^15.1.1"
+  },
+  "bin": {
+    "gccg": "./generate.js"
+  }
+}
