@@ -11,7 +11,7 @@ const formatCommits = async (compareUrl, formatter) => {
   // e.g. https://github.com/Workday/canvas-kit/compare/v3.0.0-alpha.5...master is...
   // ${protocol}//${host}/${owner}/${name}/${branch}/${filepath}
   const { branch } = gh(compareUrl);
-  if (branch !== 'compare') throw new Error("Must be a valid Github Compare URL");
+  if (branch !== 'compare') throw "Must be a valid url: it is usually in the format: https://github.com/<org>/<repo>/<start>...<end>";
 
   output = (await getCommitDataFromUrl(compareUrl))
     .map(formatter || succinctFormatter).join('\n');
@@ -32,8 +32,7 @@ const getCommitDataFromUrl = async (url) => {
   const nodes = document.querySelectorAll(".TimelineItem--condensed");
 
   if (nodes.length === 0) {
-    console.error("We couldn't find any commits on the page, make sure you are targetting the compare feature of Github: https://github.com/<Org>/<Repo>/<commit1>...<commit2>");
-    process.exit(1);
+    throw "We couldn't find any commits on the page, make sure you have commits in the range you're asking for: https://github.com/<org>/<repo>/<start>...<end>";
   }
 
   nodes.forEach(node => {    

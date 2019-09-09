@@ -22,6 +22,14 @@ const cli = async (args, formatter) => {
     outFile
   } = minimist(args);
 
+  if (!compareUrl || typeof compareUrl !== 'string') {
+    throw `
+      Error: Need a url to parse! Github Compare URLs show the commits between two commit ranges.\n
+      Must be a valid url: it is usually in the format: https://github.com/<org>/<repo>/<start>...<end>\n
+      You can also get this url by going to your repo and creating a 'New Pull Request'. This will allow you to compare changes between commits/tags/branches.
+    `;
+  }
+
   let output = await formatCommits(compareUrl, formatter);
 
   if (outFile) {
@@ -29,14 +37,21 @@ const cli = async (args, formatter) => {
     try {
       mkdirp.sync(dir);
       fs.writeFileSync(outFile, output);
-      console.log(`Changelog contents written successfuly to: ${outFile}`);
-      process.exit(0);
+      return `Changelog contents written successfuly to: ${outFile}\n`;
     } catch(e) {
-      throw new Error(`Error writing changelog contents: \n${e}`);
+      throw `Error writing changelog contents: \n${e}`;
     }
   } else {
-    console.log(output);
+    return output;
   }
 }
 
-cli(process.argv.slice(2), succinctFormatter);
+cli(process.argv.slice(2), succinctFormatter).then(
+  (value) => {
+    console.log(value);
+    process.exit(0);
+  },
+  (reason) => {
+    console.error(reason);
+    process.exit(1);
+  });
