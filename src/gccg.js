@@ -41,7 +41,7 @@ const getCommitDataFromUrl = async (url) => {
     commits.push({
       url: url,
       author: node.querySelector("a.avatar img").alt.slice(1), // returns username without '@'
-      msg: node.querySelector(".commit-message code a").title, // returns the entire commit message (every line)
+      msg: node.querySelector("code a").title, // returns the entire commit message (every line)
     })
   });
 
