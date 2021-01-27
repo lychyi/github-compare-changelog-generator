@@ -1,6 +1,6 @@
 {
   "name": "github-compare-changelog-generator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate markdown for changelogs from the Github Compare page.",
   "keywords": ["github", "changelog", "generator", "compare", "markdown", "cli", "tool"],
   "homepage": "https://github.com/lychyi/github-compare-changelog-generator",
