@@ -18,7 +18,7 @@
     "url" : "https://github.com/lychyi/github-compare-changelog-generator.git"
   },
   "dependencies": {
-    "jsdom": "^15.1.1",
+    "jsdom": "^16.5.0",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
     "parse-github-url": "^1.0.2"
